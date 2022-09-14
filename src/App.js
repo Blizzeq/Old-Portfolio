@@ -3,10 +3,10 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import NotFound from "./Components/NotFound";
 import Home from "./Components/Home";
 import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
-import React from "react";
+import React, {createContext, useState} from "react";
 import {FormControlLabel, styled, Switch} from "@mui/material";
 
-const MaterialUISwitch = styled(Switch)(({ theme }) => ({
+const MaterialUISwitch = styled(Switch)(({theme}) => ({
     width: 62,
     height: 34,
     padding: 7,
@@ -52,45 +52,56 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
         borderRadius: 20 / 2,
     },
 }));
+export const ThemeContext = createContext(null);
 
 
 function App() {
+
+    const [themeMode, setThemeMode] = useState('dark');
+
+    function toggleTheme(){
+        setThemeMode(themeMode === 'dark' ? 'light' : 'dark');
+    }
+
     return (
-        <BrowserRouter>
-            <Navbar collapseOnSelect expand="lg" bg={'dark'} variant={'dark'} className={'Navbar'}>
-                <Container className={'Container'}>
-                    <Navbar.Brand href="/">Jakub Krasuski</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="me-auto">
-                            <Nav.Link href="#features">Features</Nav.Link>
-                            <Nav.Link href="#pricing">Pricing</Nav.Link>
-                            <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">
-                                    Another action
-                                </NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.4">
-                                    Separated link
-                                </NavDropdown.Item>
-                            </NavDropdown>
-                        </Nav>
-                        <Nav>
-                            <FormControlLabel id={'DisplayModeSwitch'}
-                                control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked/>}
-                                label="Display mode"
-                            />
-                        </Nav>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
-            <Routes>
-                <Route path="/" element={<Home />}/>
-                <Route path="*" element={<NotFound />}/>
-            </Routes>
-        </BrowserRouter>
+        <ThemeContext.Provider value={{themeMode, setThemeMode}}>
+            <BrowserRouter>
+                <Navbar collapseOnSelect expand="lg" className={`Navbar-${themeMode}`}>
+                    <Container className={'Container'}>
+                        <Navbar.Brand href="/">Jakub Krasuski</Navbar.Brand>
+                        <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
+                        <Navbar.Collapse id="responsive-navbar-nav">
+                            <Nav className="me-auto">
+                                <Nav.Link href="#features">Features</Nav.Link>
+                                <Nav.Link href="#pricing">Pricing</Nav.Link>
+                                <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+                                    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                                    <NavDropdown.Item href="#action/3.2">
+                                        Another action
+                                    </NavDropdown.Item>
+                                    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                                    <NavDropdown.Divider/>
+                                    <NavDropdown.Item href="#action/3.4">
+                                        Separated link
+                                    </NavDropdown.Item>
+                                </NavDropdown>
+                            </Nav>
+                            <Nav>
+                                <FormControlLabel id={'DisplayModeSwitch'}
+                                                  control={<MaterialUISwitch sx={{m: 1}} defaultChecked />}
+                                                  label={themeMode === 'dark' ? 'Dark Mode' : 'Light Mode'}
+                                                  onChange={toggleTheme}
+                                />
+                            </Nav>
+                        </Navbar.Collapse>
+                    </Container>
+                </Navbar>
+                <Routes>
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="*" element={<NotFound/>}/>
+                </Routes>
+            </BrowserRouter>
+        </ThemeContext.Provider>
     );
 }
 

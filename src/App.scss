@@ -1,13 +1,17 @@
 @import "~bootstrap/scss/bootstrap";
+
 @font-face {
   font-family: "Inter";
   src: url("./assets/Inter/static/Inter-Regular.ttf") format("truetype");
 }
+
+
+
 * {
   font-family: "Inter", sans-serif !important;
 }
 
-.Home{
+.Home {
   background-image: url(./assets/Home-Background.png);
   max-width: 100vw;
   height: 100vh;
@@ -15,20 +19,53 @@
   transition: background-color 1s;
 }
 
-.Home:hover{
-  background-color: rgba(255, 255, 255, .7);
-}
 
-.Home:before {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-color: inherit;
-  content: ' ';
-}
+%Navbar {
+  a {
+    font-size: 1.8rem;
+  }
 
-.Navbar{
-  #DisplayModeSwitch{
-    color: white;
+  a.nav-link, span {
+    font-size: 1.5rem;
   }
 }
+
+.Navbar-light {
+  @extend %Navbar;
+  background-color: rgba(255, 255, 255, 0.8);
+
+  a, span {
+    color: black;
+    transition: color .5s;
+  }
+
+  a.nav-link, span:hover {
+    color: #868686 !important;
+  }
+
+  a.nav-link:hover {
+    color: black !important;
+  }
+}
+
+.Navbar-dark {
+  @extend %Navbar;
+  background-color: rgb(0, 0, 0);
+
+  a, span {
+    color: white;
+    transition: color .5s;
+  }
+
+  a.nav-link, span:hover {
+    color: #868686 !important;
+  }
+
+  a.nav-link:hover {
+    color: white !important;
+  }
+}
+
+
+
+
