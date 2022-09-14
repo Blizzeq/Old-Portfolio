@@ -6,7 +6,6 @@
 }
 
 
-
 * {
   font-family: "Inter", sans-serif !important;
 }
@@ -33,6 +32,7 @@
 .Navbar-light {
   @extend %Navbar;
   background-color: rgba(255, 255, 255, 0.8);
+  --bs-navbar-toggler-icon-bg: url(./assets/list-white.svg);
 
   a, span {
     color: black;
@@ -50,11 +50,17 @@
 
 .Navbar-dark {
   @extend %Navbar;
-  background-color: rgb(0, 0, 0);
+  background-color: black;
+  --bs-navbar-toggler-border-color: #868686;
+  --bs-navbar-toggler-icon-bg: url(./assets/list-black.svg);
 
   a, span {
     color: white;
     transition: color .5s;
+
+  }
+  span.navbar-toggler-icon {
+    stroke: white;
   }
 
   a.nav-link, span:hover {
