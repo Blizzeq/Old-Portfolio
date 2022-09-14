@@ -1,0 +1,34 @@
+@import "~bootstrap/scss/bootstrap";
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/Inter/static/Inter-Regular.ttf") format("truetype");
+}
+* {
+  font-family: "Inter", sans-serif !important;
+}
+
+.Home{
+  background-image: url(./assets/Home-Background.png);
+  max-width: 100vw;
+  height: 100vh;
+  background-position: top right 10%;
+  transition: background-color 1s;
+}
+
+.Home:hover{
+  background-color: rgba(255, 255, 255, .7);
+}
+
+.Home:before {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: inherit;
+  content: ' ';
+}
+
+.Navbar{
+  #DisplayModeSwitch{
+    color: white;
+  }
+}
