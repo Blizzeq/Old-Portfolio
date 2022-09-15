@@ -3,8 +3,10 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import NotFound from "./Components/NotFound";
 import Home from "./Components/Home";
 import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
-import React, {createContext, useState} from "react";
+import React, {createContext, useRef, useState} from "react";
 import {FormControlLabel, styled, Switch} from "@mui/material";
+import button from "bootstrap/js/src/button";
+
 
 const MaterialUISwitch = styled(Switch)(({theme}) => ({
     width: 62,
@@ -62,6 +64,8 @@ function App() {
     function toggleTheme(){
         setThemeMode(themeMode === 'dark' ? 'light' : 'dark');
     }
+
+    const homeRef = useRef(null);
 
     return (
         <ThemeContext.Provider value={{themeMode, setThemeMode}}>
