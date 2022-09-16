@@ -37,7 +37,7 @@ function Home(props) {
                 <div className={'Content'}>
                     <Typewriter
                         options={{
-                            strings: ['Junior React Developer', 'IT Student', 'Enthusiast of technologies'],
+                            strings: ['Junior React Developer', 'IT Student', 'Enthusiast of technologies and programming'],
                             autoStart: true,
                             loop: true,
                         }}
