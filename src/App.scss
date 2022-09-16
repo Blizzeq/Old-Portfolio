@@ -157,6 +157,8 @@
 .Home-dark {
   @extend %Home;
   background-image: url(./assets/Home-Background-Dark-Small.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 
   .Content {
     color: white !important;
@@ -170,6 +172,8 @@
 .Home-light {
   @extend %Home;
   background-image: url(./assets/Home-Background-White-Small.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 
   .Content {
     color: white !important;
@@ -434,6 +438,7 @@
   @extend %Education;
   background-image: url(./assets/Education-Background-Dark.png);
   background-size: cover;
+    background-repeat: no-repeat;
   transition: background-image 1s;
 
   .Content{
@@ -450,6 +455,7 @@
   @extend %Education;
   background-image: url(./assets/Education-Background-White.png);
   background-size: cover;
+    background-repeat: no-repeat;
   transition: background-image 1s;
 
     .Content{
