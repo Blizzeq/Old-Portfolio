@@ -10,7 +10,7 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-20px);
   }
   100% {
     transform: translateY(0);
@@ -18,14 +18,14 @@
 }
 
 @keyframes fade-in-down {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fade-in-up {
@@ -41,6 +41,7 @@
 
 
 * {
+
   font-family: "Inter", sans-serif !important;
 
   ::-webkit-scrollbar {
@@ -89,33 +90,38 @@
   max-width: 100vw;
   height: 100vh;
   background-position: top right 10%;
-  transition: background-color 1s;
+  transition: background-image 1s;
 
   .Home-Content {
     display: grid;
     grid-template-areas:
       "hello"
       "typewriter"
-      "img";
+      "img"
+      "introduction";
     grid-auto-columns: 1fr;
     gap: 1.5rem;
     padding-block: 3rem;
 
     .Content {
       margin: 0 auto;
+      transition: background-image 1s;
     }
 
     .Content:nth-child(1) {
       grid-area: hello;
-      font-size: 3rem;
+      font-size: 2.5rem;
       text-align: center;
       animation: fade-in-down 1.5s ease-in-out;
+      margin-left: 2rem;
+      margin-right: 2rem;
     }
 
     .Content:nth-child(2) {
       grid-area: typewriter;
       font-size: 1.5rem;
     }
+
     .Content:nth-child(3) {
       grid-area: img;
       min-height: 250px;
@@ -123,14 +129,34 @@
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
-      animation: fade-in-up 1s ease-out, bounce 2s ease-out infinite;
+      animation: fade-in-up 1s ease-out, bounce 4s ease-out infinite;
+      animation-delay: 0s, 1s;
+      margin-top: 2rem;
+    }
+
+    .Content:nth-child(4) {
+      grid-area: introduction;
+      font-size: 1.5rem;
+      text-align: center;
+      margin-top: 3rem;
+      margin-left: 2rem;
+      margin-right: 2rem;
+      transform: translateX(-200px);
+      opacity: 0;
+      transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+    }
+
+    .Content:nth-child(4).Appear {
+      transform: translateX(0);
+      opacity: 1;
+      transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
     }
   }
 }
 
 .Home-dark {
   @extend %Home;
-  background-image: url(./assets/Home-Background-Dark.png);
+  background-image: url(./assets/Home-Background-Dark-Small.png);
 
   .Content {
     color: white !important;
@@ -143,7 +169,7 @@
 
 .Home-light {
   @extend %Home;
-  background-image: url(./assets/Home-Background-White.png);
+  background-image: url(./assets/Home-Background-White-Small.png);
 
   .Content {
     color: white !important;
@@ -156,6 +182,7 @@
 
 
 %Navbar {
+
   a {
     font-size: 1.8rem;
   }
@@ -171,13 +198,17 @@
       margin: auto;
     }
   }
-
 }
 
 .Navbar-light {
   @extend %Navbar;
-  background-color: rgba(255, 255, 255, 0.8);
-  --bs-navbar-toggler-icon-bg: url(./assets/list-white.svg);
+  transition: background-color 1s, background-image 1s;
+  background-color: rgba(255, 255, 255, 1);
+
+  .navbar-toggler-icon {
+    background-image: url(./assets/list-white.svg);
+    transition: background-image 0s;
+  }
 
   a, span {
     color: black;
@@ -217,14 +248,18 @@
 
 .Navbar-dark {
   @extend %Navbar;
+  transition: background-color 1s, background-image 1s;
   background-color: black;
   --bs-navbar-toggler-border-color: #868686;
-  --bs-navbar-toggler-icon-bg: url(./assets/list-black.svg);
+
+  .navbar-toggler-icon {
+    background-image: url(./assets/list-black.svg);
+    transition: background-image 0s;
+  }
 
   a, span {
     color: white;
     transition: color .5s;
-
   }
 
   a.nav-link, span:hover {
@@ -263,6 +298,167 @@
   }
 }
 
+%Education {
+  max-width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
 
+  .Education-Content {
+    display: grid;
+    grid-template-areas:
+    "img img img img img"
+      "one one two two two"
+      "three three four four four"
+      "five five six six six";
+    grid-auto-columns: 1fr;
+    gap: 1rem;
+    padding-block: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 
+    .Content {
+      margin: auto;
+    }
+
+    .Content:nth-child(1) {
+      grid-area: img;
+      min-height: 125px;
+      min-width: 125px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-top: 2rem;
+      transform: translateX(-200px);
+      opacity: 0;
+      transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+    }
+    .Content:nth-child(2) {
+      grid-area: one;
+      font-size: 1.5rem;
+      text-align: center;
+      transform: translateX(-200px);
+      opacity: 0;
+      transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+    }
+
+    .Content:nth-child(3) {
+      grid-area: two;
+      font-size: 1.5rem;
+      text-align: center;
+      transform: translateX(200px);
+      opacity: 0;
+      transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+    }
+
+    .Content:nth-child(4) {
+      grid-area: three;
+      font-size: 1.5rem;
+      text-align: center;
+      transform: translateX(-200px);
+      opacity: 0;
+      transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+    }
+
+    .Content:nth-child(5) {
+      grid-area: four;
+      font-size: 1.5rem;
+      text-align: center;
+      transform: translateX(200px);
+      opacity: 0;
+      transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+    }
+
+    .Content:nth-child(6) {
+      grid-area: five;
+      font-size: 1.5rem;
+      text-align: center;
+      transform: translateX(-200px);
+      opacity: 0;
+      transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+    }
+
+    .Content:nth-child(7) {
+      grid-area: six;
+      font-size: 1.5rem;
+      text-align: center;
+      transform: translateX(200px);
+      opacity: 0;
+      transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+    }
+
+    .Content:nth-child(1).Appear {
+      transform: translateX(0);
+      opacity: 1;
+      transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+    }
+
+    .Content:nth-child(2).Appear {
+      transform: translateX(0);
+      opacity: 1;
+      transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+    }
+
+    .Content:nth-child(3).Appear {
+      transform: translateX(0);
+      opacity: 1;
+      transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+    }
+
+    .Content:nth-child(4).Appear {
+      transform: translateX(0);
+      opacity: 1;
+      transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+    }
+
+    .Content:nth-child(5).Appear {
+      transform: translateX(0);
+      opacity: 1;
+      transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+    }
+
+    .Content:nth-child(6).Appear {
+      transform: translateX(0);
+      opacity: 1;
+      transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+    }
+
+    .Content:nth-child(7).Appear {
+      transform: translateX(0);
+      opacity: 1;
+      transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+    }
+  }
+}
+
+.Education-dark {
+  @extend %Education;
+  background-image: url(./assets/Education-Background-Dark.png);
+  background-size: cover;
+  transition: background-image 1s;
+
+  .Content{
+    color: white !important;
+    transition: color 1s;
+  }
+
+  .Content:nth-child(1) {
+    background-image: url(./assets/Logo-Education-Dark.png);
+  }
+}
+
+.Education-light {
+  @extend %Education;
+  background-image: url(./assets/Education-Background-White.png);
+  background-size: cover;
+  transition: background-image 1s;
+
+    .Content{
+        color: black !important;
+      transition: color 1s;
+    }
+
+  .Content:nth-child(1) {
+    background-image: url(./assets/Logo-Education-White.png);
+  }
+}
 

@@ -3,9 +3,8 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import NotFound from "./Components/NotFound";
 import Home from "./Components/Home";
 import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
-import React, {createContext, useRef, useState} from "react";
+import React, {createContext, useState} from "react";
 import {FormControlLabel, styled, Switch} from "@mui/material";
-import button from "bootstrap/js/src/button";
 
 
 const MaterialUISwitch = styled(Switch)(({theme}) => ({
@@ -59,24 +58,25 @@ export const ThemeContext = createContext(null);
 
 function App() {
 
+
+
     const [themeMode, setThemeMode] = useState('dark');
 
     function toggleTheme(){
         setThemeMode(themeMode === 'dark' ? 'light' : 'dark');
     }
 
-    const homeRef = useRef(null);
 
     return (
         <ThemeContext.Provider value={{themeMode, setThemeMode}}>
             <BrowserRouter>
-                <Navbar collapseOnSelect expand="lg" className={`Navbar-${themeMode}`}>
+                <Navbar collapseOnSelect expand="lg" className={`Navbar-${themeMode}`} sticky={"top"}>
                     <Container className={'Container'}>
                         <Navbar.Brand href="/">Jakub Krasuski</Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
-                                <Nav.Link href="#features">Features</Nav.Link>
+                                <Nav.Link href="#Education">Features</Nav.Link>
                                 <Nav.Link href="#pricing">Pricing</Nav.Link>
                                 <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                                     <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
@@ -85,7 +85,7 @@ function App() {
                                     </NavDropdown.Item>
                                     <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
                                     <NavDropdown.Divider/>
-                                    <NavDropdown.Item href="#action/3.4">
+                                    <NavDropdown.Item href="/notfound">
                                         Separated link
                                     </NavDropdown.Item>
                                 </NavDropdown>
@@ -102,7 +102,7 @@ function App() {
                 </Navbar>
                 <Routes>
                     <Route path="/" element={<Home/>}/>
-                    <Route path="*" element={<NotFound/>}/>
+                    <Route path="/notfound" element={<NotFound/>}/>
                 </Routes>
             </BrowserRouter>
         </ThemeContext.Provider>

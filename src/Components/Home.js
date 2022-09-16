@@ -1,13 +1,34 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect, useRef, useState} from 'react';
 import {ThemeContext} from "../App";
 import Typewriter from 'typewriter-effect';
+import Education from "./Education";
+import {useInView} from "framer-motion";
 
 
 function Home(props) {
 
-    const {themeMode, setThemeMode} = useContext(ThemeContext);
+    const isInViewRef = useRef(null);
+
+    const isInView = useInView(isInViewRef, {once: false});
+
+    const [isInViewInfo, setIsInViewInfo] = useState('');
+
+    function checkInView(){
+        if(isInView){
+            setIsInViewInfo('Appear');
+        }else{
+            setIsInViewInfo('');
+        }
+    }
+
+    useEffect(() => {
+        checkInView();
+    }, [isInView]);
+
+    const {themeMode} = useContext(ThemeContext);
 
     return (
+        <>
         <div className={`Home-${themeMode}`}>
             <div className={'Home-Content'}>
                 <div className={'Content'}>
@@ -23,10 +44,14 @@ function Home(props) {
                     />
                 </div>
                 <div className={'Content'}>
-
+                </div>
+                <div className={`Content ${isInViewInfo}`} ref={isInViewRef}>
+                    <p>Let me introduce myself</p>
                 </div>
             </div>
         </div>
+        <Education/>
+        </>
     );
 }
 
