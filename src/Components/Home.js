@@ -3,6 +3,7 @@ import {ThemeContext} from "../App";
 import Typewriter from 'typewriter-effect';
 import Education from "./Education";
 import {useInView} from "framer-motion";
+import Knowledge from "./Knowledge";
 
 
 function Home(props) {
@@ -51,6 +52,7 @@ function Home(props) {
             </div>
         </div>
         <Education/>
+        <Knowledge/>
         </>
     );
 }
