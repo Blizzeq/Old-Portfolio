@@ -1,8 +1,13 @@
-@import "~bootstrap/scss/bootstrap";
+//@import "~bootstrap/scss/bootstrap";
 
 @font-face {
   font-family: "Inter";
   src: url("./assets/Inter/static/Inter-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "CeraPro";
+  src: url("./assets/cera pro font/Cera Pro Black.ttf") format("truetype");
 }
 
 @keyframes bounce {
@@ -115,6 +120,7 @@
       animation: fade-in-down 1.5s ease-in-out;
       margin-left: 2rem;
       margin-right: 2rem;
+      font-weight: bold;
     }
 
     .Content:nth-child(2) {
@@ -479,6 +485,25 @@
   max-width: 100vw;
   height: 100vh;
   overflow-y: hidden;
+
+  .Knowledge-Content {
+    margin-top: 43%;
+    margin-left: 2rem;
+    margin-right: 2rem;
+
+    .Knowledge-Card-Main {
+      height: 32rem;
+      display: grid;
+      grid-auto-columns: 1fr;
+      grid-auto-rows: 50px;
+      grid-template-areas:
+      "one"
+        "two"
+        "three"
+        "four";
+      gap: 2rem;
+    }
+  }
 }
 
 .Knowledge-dark {
@@ -487,6 +512,11 @@
   background-size: cover;
   background-repeat: no-repeat;
   transition: background-image 1s;
+
+  .Knowledge-Card-Main {
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: background-color 1s, color 1s;
+  }
 }
 
 .Knowledge-light {
@@ -495,5 +525,11 @@
   background-size: cover;
   background-repeat: no-repeat;
   transition: background-image 1s;
+
+  .Knowledge-Card-Main {
+    background-color: white;
+    color: black;
+    transition: background-color 1s, color 1s;
+  }
 }
 
