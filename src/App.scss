@@ -96,6 +96,8 @@
   height: 100vh;
   background-position: top right 10%;
   transition: background-image 1s;
+  overflow-x: hidden;
+  overflow-y: hidden;
 
   .Home-Content {
     display: grid;
@@ -315,6 +317,7 @@
 %Education {
   max-width: 100vw;
   height: 100vh;
+  overflow-y: hidden;
   overflow-x: hidden;
 
   .Education-Content {
@@ -485,6 +488,7 @@
   max-width: 100vw;
   height: 100vh;
   overflow-y: hidden;
+  overflow-x: hidden;
 
   .Knowledge-Content {
     margin-top: 43%;
@@ -492,16 +496,17 @@
     margin-right: 2rem;
 
     .Knowledge-Card-Main {
-      height: 32rem;
+      height: 34rem;
       display: grid;
       grid-template-areas:
       "react react typescript typescript typescript typescript"
       "gatsby gatsby gatsby leaflet leaflet leaflet"
       "sass sass sass css css css"
+      "styled-components styled-components styled-components styled-components github github"
       "express express express mysql mysql mysql"
       "material-ui material-ui material-ui node node node"
-      "responsive responsive responsive responsive bootstrap bootstrap"
-      "styled-components styled-components styled-components styled-components github github";
+      "responsive responsive responsive responsive bootstrap bootstrap";
+
       opacity: 0;
       padding-block: 2rem;
       padding-inline: 1rem;
@@ -509,71 +514,194 @@
       grid-auto-columns: 1fr;
       .Knowledge-Card-Content {
         opacity: 0;
-        p {
+        border-color: #949494;
+        a {
           margin: auto;
+          text-decoration: none;
         }
-      }
-
-      .Knowledge-Card-Content.Appear{
-        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
-        opacity: 1;
       }
 
       .Knowledge-Card-Content:nth-child(1) {
         grid-area: react;
+        transform: translateX(-100px);
+        opacity: 0;
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
       }
 
       .Knowledge-Card-Content:nth-child(2) {
         grid-area: typescript;
+        transform: translateX(100px);
+        opacity: 0;
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
       }
 
       .Knowledge-Card-Content:nth-child(3) {
         grid-area: gatsby;
+        transform: translateX(-100px);
+        opacity: 0;
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
       }
 
       .Knowledge-Card-Content:nth-child(4) {
         grid-area: leaflet;
+        transform: translateX(100px);
+        opacity: 0;
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
       }
 
       .Knowledge-Card-Content:nth-child(5) {
         grid-area: sass;
+        transform: translateX(-100px);
+        opacity: 0;
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
       }
 
       .Knowledge-Card-Content:nth-child(6) {
         grid-area: css;
+        transform: translateX(100px);
+        opacity: 0;
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
       }
 
       .Knowledge-Card-Content:nth-child(7) {
         grid-area: express;
+        transform: translateX(-100px);
+        opacity: 0;
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
       }
 
       .Knowledge-Card-Content:nth-child(8) {
         grid-area: mysql;
+        transform: translateX(100px);
+        opacity: 0;
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
       }
 
       .Knowledge-Card-Content:nth-child(9) {
         grid-area: material-ui;
+        transform: translateX(-100px);
+        opacity: 0;
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
       }
 
       .Knowledge-Card-Content:nth-child(10) {
         grid-area: node;
+        transform: translateX(100px);
+        opacity: 0;
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
       }
 
       .Knowledge-Card-Content:nth-child(11) {
         grid-area: responsive;
+        transform: translateX(-100px);
+        opacity: 0;
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
       }
 
       .Knowledge-Card-Content:nth-child(12) {
         grid-area: bootstrap;
+        transform: translateX(100px);
+        opacity: 0;
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
       }
 
       .Knowledge-Card-Content:nth-child(13) {
         grid-area: styled-components;
+        transform: translateX(-100px);
+        opacity: 0;
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
       }
 
         .Knowledge-Card-Content:nth-child(14) {
-            grid-area: github;
+          grid-area: github;
+          transform: translateX(100px);
+          opacity: 0;
+          transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
         }
+
+        .Knowledge-Card-Content:nth-child(1).Appear {
+          transform: translateX(0);
+          opacity: 1;
+          transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+        }
+
+      .Knowledge-Card-Content:nth-child(2).Appear {
+        transform: translateX(0);
+        opacity: 1;
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+      }
+
+      .Knowledge-Card-Content:nth-child(3).Appear {
+        transform: translateX(0);
+        opacity: 1;
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+      }
+
+      .Knowledge-Card-Content:nth-child(4).Appear {
+        transform: translateX(0);
+        opacity: 1;
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+      }
+
+      .Knowledge-Card-Content:nth-child(5).Appear {
+        transform: translateX(0);
+        opacity: 1;
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+      }
+
+      .Knowledge-Card-Content:nth-child(6).Appear {
+        transform: translateX(0);
+        opacity: 1;
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+      }
+
+      .Knowledge-Card-Content:nth-child(7).Appear {
+        transform: translateX(0);
+        opacity: 1;
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+      }
+
+      .Knowledge-Card-Content:nth-child(8).Appear {
+        transform: translateX(0);
+        opacity: 1;
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+      }
+
+      .Knowledge-Card-Content:nth-child(9).Appear {
+        transform: translateX(0);
+        opacity: 1;
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+      }
+
+      .Knowledge-Card-Content:nth-child(10).Appear {
+        transform: translateX(0);
+        opacity: 1;
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+      }
+
+      .Knowledge-Card-Content:nth-child(11).Appear {
+        transform: translateX(0);
+        opacity: 1;
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+      }
+
+      .Knowledge-Card-Content:nth-child(12).Appear {
+        transform: translateX(0);
+        opacity: 1;
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+      }
+
+      .Knowledge-Card-Content:nth-child(13).Appear {
+        transform: translateX(0);
+        opacity: 1;
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+      }
+
+      .Knowledge-Card-Content:nth-child(14).Appear {
+        transform: translateX(0);
+        opacity: 1;
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+      }
     }
 
     .Knowledge-Card-Main.Appear {
@@ -596,8 +724,11 @@
 
     .Knowledge-Card-Content {
       background-color: lighten(rgba(0, 0, 0, 0.8), 40%);
-      color: white;
       transition: color 1s, background-color 1s;
+      a {
+        color: white;
+        transition: color 1s;
+      }
     }
   }
 }
@@ -616,8 +747,12 @@
 
     .Knowledge-Card-Content {
       background-color: darken(white, 10%);
-      color: black;
       transition: color 1s, background-color 1s;
+
+      a {
+        color: black;
+        transition: color 1s;
+      }
     }
   }
 }
