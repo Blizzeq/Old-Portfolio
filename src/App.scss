@@ -1,8 +1,13 @@
-@import "~bootstrap/scss/bootstrap";
+//@import "~bootstrap/scss/bootstrap";
 
 @font-face {
   font-family: "Inter";
   src: url("./assets/Inter/static/Inter-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "CeraPro";
+  src: url("./assets/cera pro font/Cera Pro Black.ttf") format("truetype");
 }
 
 @keyframes bounce {
@@ -113,8 +118,9 @@
       font-size: 2.5rem;
       text-align: center;
       animation: fade-in-down 1.5s ease-in-out;
-      margin-left: 2rem;
-      margin-right: 2rem;
+      margin-left: 1.75rem;
+      margin-right: 1.75rem;
+      font-weight: bold;
     }
 
     .Content:nth-child(2) {
@@ -157,8 +163,8 @@
 .Home-dark {
   @extend %Home;
   background-image: url(./assets/Home-Background-Dark-Small.png);
-    background-size: cover;
-    background-repeat: no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
 
   .Content {
     color: white !important;
@@ -172,8 +178,8 @@
 .Home-light {
   @extend %Home;
   background-image: url(./assets/Home-Background-White-Small.png);
-    background-size: cover;
-    background-repeat: no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
 
   .Content {
     color: white !important;
@@ -191,8 +197,12 @@
     font-size: 1.8rem;
   }
 
+  .navbar-brand {
+    margin-left: 1rem;
+  }
+
   a.nav-link, span {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .navbar-nav {
@@ -305,7 +315,7 @@
 %Education {
   max-width: 100vw;
   height: 100vh;
-  overflow-y: hidden;
+  overflow-x: hidden;
 
   .Education-Content {
     display: grid;
@@ -315,7 +325,7 @@
       "three three four four four"
       "five five six six six";
     grid-auto-columns: 1fr;
-    gap: 1rem;
+    gap: 2rem;
     padding-block: 2rem;
     margin-left: 1rem;
     margin-right: 1rem;
@@ -336,9 +346,11 @@
       opacity: 0;
       transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
     }
+
     .Content:nth-child(2) {
+      margin-top: 5rem;
       grid-area: one;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       text-align: center;
       transform: translateX(-200px);
       opacity: 0;
@@ -346,8 +358,9 @@
     }
 
     .Content:nth-child(3) {
+      margin-top: 3rem;
       grid-area: two;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       text-align: center;
       transform: translateX(200px);
       opacity: 0;
@@ -356,7 +369,7 @@
 
     .Content:nth-child(4) {
       grid-area: three;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       text-align: center;
       transform: translateX(-200px);
       opacity: 0;
@@ -365,7 +378,7 @@
 
     .Content:nth-child(5) {
       grid-area: four;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       text-align: center;
       transform: translateX(200px);
       opacity: 0;
@@ -374,7 +387,7 @@
 
     .Content:nth-child(6) {
       grid-area: five;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       text-align: center;
       transform: translateX(-200px);
       opacity: 0;
@@ -383,7 +396,7 @@
 
     .Content:nth-child(7) {
       grid-area: six;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       text-align: center;
       transform: translateX(200px);
       opacity: 0;
@@ -438,10 +451,10 @@
   @extend %Education;
   background-image: url(./assets/Education-Background-Dark.png);
   background-size: cover;
-    background-repeat: no-repeat;
+  background-repeat: no-repeat;
   transition: background-image 1s;
 
-  .Content{
+  .Content {
     color: white !important;
     transition: color 1s;
   }
@@ -455,16 +468,157 @@
   @extend %Education;
   background-image: url(./assets/Education-Background-White.png);
   background-size: cover;
-    background-repeat: no-repeat;
+  background-repeat: no-repeat;
   transition: background-image 1s;
 
-    .Content{
-        color: black !important;
-      transition: color 1s;
-    }
+  .Content {
+    color: black !important;
+    transition: color 1s;
+  }
 
   .Content:nth-child(1) {
     background-image: url(./assets/Logo-Education-White.png);
+  }
+}
+
+%Knowledge {
+  max-width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+
+  .Knowledge-Content {
+    margin-top: 43%;
+    margin-left: 2rem;
+    margin-right: 2rem;
+
+    .Knowledge-Card-Main {
+      height: 32rem;
+      display: grid;
+      grid-template-areas:
+      "react react typescript typescript typescript typescript"
+      "gatsby gatsby gatsby leaflet leaflet leaflet"
+      "sass sass sass css css css"
+      "express express express mysql mysql mysql"
+      "material-ui material-ui material-ui node node node"
+      "responsive responsive responsive responsive bootstrap bootstrap"
+      "styled-components styled-components styled-components styled-components github github";
+      opacity: 0;
+      padding-block: 2rem;
+      padding-inline: 1rem;
+      gap: 1rem;
+      grid-auto-columns: 1fr;
+      .Knowledge-Card-Content {
+        opacity: 0;
+        p {
+          margin: auto;
+        }
+      }
+
+      .Knowledge-Card-Content.Appear{
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+        opacity: 1;
+      }
+
+      .Knowledge-Card-Content:nth-child(1) {
+        grid-area: react;
+      }
+
+      .Knowledge-Card-Content:nth-child(2) {
+        grid-area: typescript;
+      }
+
+      .Knowledge-Card-Content:nth-child(3) {
+        grid-area: gatsby;
+      }
+
+      .Knowledge-Card-Content:nth-child(4) {
+        grid-area: leaflet;
+      }
+
+      .Knowledge-Card-Content:nth-child(5) {
+        grid-area: sass;
+      }
+
+      .Knowledge-Card-Content:nth-child(6) {
+        grid-area: css;
+      }
+
+      .Knowledge-Card-Content:nth-child(7) {
+        grid-area: express;
+      }
+
+      .Knowledge-Card-Content:nth-child(8) {
+        grid-area: mysql;
+      }
+
+      .Knowledge-Card-Content:nth-child(9) {
+        grid-area: material-ui;
+      }
+
+      .Knowledge-Card-Content:nth-child(10) {
+        grid-area: node;
+      }
+
+      .Knowledge-Card-Content:nth-child(11) {
+        grid-area: responsive;
+      }
+
+      .Knowledge-Card-Content:nth-child(12) {
+        grid-area: bootstrap;
+      }
+
+      .Knowledge-Card-Content:nth-child(13) {
+        grid-area: styled-components;
+      }
+
+        .Knowledge-Card-Content:nth-child(14) {
+            grid-area: github;
+        }
+    }
+
+    .Knowledge-Card-Main.Appear {
+      transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s, background-color 1s;
+      opacity: 1;
+    }
+  }
+}
+
+.Knowledge-dark {
+  @extend %Knowledge;
+  background-image: url(./assets/Knowledge-Background-Dark-Small.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: background-image 1s;
+
+  .Knowledge-Card-Main {
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: background-color 1s, color 1s;
+
+    .Knowledge-Card-Content {
+      background-color: lighten(rgba(0, 0, 0, 0.8), 40%);
+      color: white;
+      transition: color 1s, background-color 1s;
+    }
+  }
+}
+
+.Knowledge-light {
+  @extend %Knowledge;
+  background-image: url(./assets/Knowledge-Background-White-Small.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: background-image 1s;
+
+  .Knowledge-Card-Main {
+    background-color: white;
+    color: black;
+    transition: background-color 1s, color 1s;
+
+    .Knowledge-Card-Content {
+      background-color: darken(white, 10%);
+      color: black;
+      transition: color 1s, background-color 1s;
+    }
   }
 }
 

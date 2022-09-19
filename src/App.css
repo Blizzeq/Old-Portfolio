@@ -1,0 +1,435 @@
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/Inter/static/Inter-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "CeraPro";
+  src: url("./assets/cera pro font/Cera Pro Black.ttf") format("truetype");
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+* {
+  font-family: "Inter", sans-serif !important;
+}
+* ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+* ::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+* ::-webkit-scrollbar-thumb {
+  background: #000000;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+* ::-webkit-scrollbar-thumb:hover {
+  background: #000000;
+}
+* ::-webkit-scrollbar-thumb:active {
+  background: #212121;
+}
+* ::-webkit-scrollbar-track {
+  background: #666666;
+  border: 0px none #ffffff;
+}
+* ::-webkit-scrollbar-track:hover {
+  background: #404040;
+}
+* ::-webkit-scrollbar-track:active {
+  background: #404040;
+}
+* ::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.Home-light, .Home-dark {
+  max-width: 100vw;
+  height: 100vh;
+  background-position: top right 10%;
+  transition: background-image 1s;
+}
+.Home-light .Home-Content, .Home-dark .Home-Content {
+  display: grid;
+  grid-template-areas: "hello" "typewriter" "img" "introduction";
+  grid-auto-columns: 1fr;
+  gap: 1.5rem;
+  padding-block: 3rem;
+}
+.Home-light .Home-Content .Content, .Home-dark .Home-Content .Content {
+  margin: 0 auto;
+  transition: background-image 1s;
+}
+.Home-light .Home-Content .Content:nth-child(1), .Home-dark .Home-Content .Content:nth-child(1) {
+  grid-area: hello;
+  font-size: 2.5rem;
+  text-align: center;
+  animation: fade-in-down 1.5s ease-in-out;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  font-weight: bold;
+}
+.Home-light .Home-Content .Content:nth-child(2), .Home-dark .Home-Content .Content:nth-child(2) {
+  grid-area: typewriter;
+  font-size: 1.5rem;
+}
+.Home-light .Home-Content .Content:nth-child(3), .Home-dark .Home-Content .Content:nth-child(3) {
+  grid-area: img;
+  min-height: 250px;
+  min-width: 250px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: fade-in-up 1s ease-out, bounce 4s ease-out infinite;
+  animation-delay: 0s, 1s;
+  margin-top: 2rem;
+}
+.Home-light .Home-Content .Content:nth-child(4), .Home-dark .Home-Content .Content:nth-child(4) {
+  grid-area: introduction;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 3rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  transform: translateX(-200px);
+  opacity: 0;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Home-light .Home-Content .Content:nth-child(4).Appear, .Home-dark .Home-Content .Content:nth-child(4).Appear {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+
+.Home-dark {
+  background-image: url(./assets/Home-Background-Dark-Small.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.Home-dark .Content {
+  color: white !important;
+}
+.Home-dark .Content:nth-child(3) {
+  background-image: url(./assets/computer-dark.png);
+}
+
+.Home-light {
+  background-image: url(./assets/Home-Background-White-Small.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.Home-light .Content {
+  color: white !important;
+}
+.Home-light .Content:nth-child(3) {
+  background-image: url(./assets/computer-white.png);
+}
+
+.Navbar-dark a, .Navbar-light a {
+  font-size: 1.8rem;
+}
+.Navbar-dark .navbar-brand, .Navbar-light .navbar-brand {
+  margin-left: 1rem;
+}
+.Navbar-dark a.nav-link, .Navbar-light a.nav-link, .Navbar-dark span, .Navbar-light span {
+  font-size: 1.3rem;
+}
+.Navbar-dark .navbar-nav, .Navbar-light .navbar-nav {
+  text-align: center !important;
+}
+.Navbar-dark .navbar-nav label, .Navbar-light .navbar-nav label {
+  margin: auto;
+}
+
+.Navbar-light {
+  transition: background-color 1s, background-image 1s;
+  background-color: rgb(255, 255, 255);
+}
+.Navbar-light .navbar-toggler-icon {
+  background-image: url(./assets/list-white.svg);
+  transition: background-image 0s;
+}
+.Navbar-light a, .Navbar-light span {
+  color: black;
+  transition: color 0.5s;
+}
+.Navbar-light a.nav-link, .Navbar-light span:hover {
+  color: #868686 !important;
+}
+.Navbar-light a.nav-link:hover {
+  color: black !important;
+}
+.Navbar-light .nav-item .dropdown-menu {
+  background-color: white;
+  border: 1px solid #868686;
+  border-radius: 10px;
+  margin-top: 0;
+  padding: 0;
+}
+.Navbar-light .nav-item .dropdown-menu .dropdown-item {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #868686;
+  transition: color 0.5s;
+}
+.Navbar-light .nav-item .dropdown-menu .dropdown-item:hover {
+  color: white;
+  background-color: #868686;
+}
+
+.Navbar-dark {
+  transition: background-color 1s, background-image 1s;
+  background-color: black;
+  --bs-navbar-toggler-border-color: #868686;
+}
+.Navbar-dark .navbar-toggler-icon {
+  background-image: url(./assets/list-black.svg);
+  transition: background-image 0s;
+}
+.Navbar-dark a, .Navbar-dark span {
+  color: white;
+  transition: color 0.5s;
+}
+.Navbar-dark a.nav-link, .Navbar-dark span:hover {
+  color: #868686 !important;
+}
+.Navbar-dark a.nav-link:hover {
+  color: white !important;
+}
+.Navbar-dark .nav-item hr {
+  background-color: #868686;
+}
+.Navbar-dark .nav-item .dropdown-menu {
+  background-color: black;
+  border: 1px solid #868686;
+  border-radius: 10px;
+  margin-top: 0;
+  padding: 0;
+}
+.Navbar-dark .nav-item .dropdown-menu .dropdown-item {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #868686;
+  transition: color 0.5s;
+}
+.Navbar-dark .nav-item .dropdown-menu .dropdown-item:hover {
+  color: white;
+  background-color: #333333;
+}
+
+.Education-light, .Education-dark {
+  max-width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+.Education-light .Education-Content, .Education-dark .Education-Content {
+  display: grid;
+  grid-template-areas: "img img img img img" "one one two two two" "three three four four four" "five five six six six";
+  grid-auto-columns: 1fr;
+  gap: 2rem;
+  padding-block: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.Education-light .Education-Content .Content, .Education-dark .Education-Content .Content {
+  margin: auto;
+}
+.Education-light .Education-Content .Content:nth-child(1), .Education-dark .Education-Content .Content:nth-child(1) {
+  grid-area: img;
+  min-height: 125px;
+  min-width: 125px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 2rem;
+  transform: translateX(-200px);
+  opacity: 0;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Education-light .Education-Content .Content:nth-child(2), .Education-dark .Education-Content .Content:nth-child(2) {
+  margin-top: 5rem;
+  grid-area: one;
+  font-size: 1.2rem;
+  text-align: center;
+  transform: translateX(-200px);
+  opacity: 0;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Education-light .Education-Content .Content:nth-child(3), .Education-dark .Education-Content .Content:nth-child(3) {
+  margin-top: 3rem;
+  grid-area: two;
+  font-size: 1.2rem;
+  text-align: center;
+  transform: translateX(200px);
+  opacity: 0;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Education-light .Education-Content .Content:nth-child(4), .Education-dark .Education-Content .Content:nth-child(4) {
+  grid-area: three;
+  font-size: 1.2rem;
+  text-align: center;
+  transform: translateX(-200px);
+  opacity: 0;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Education-light .Education-Content .Content:nth-child(5), .Education-dark .Education-Content .Content:nth-child(5) {
+  grid-area: four;
+  font-size: 1.2rem;
+  text-align: center;
+  transform: translateX(200px);
+  opacity: 0;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Education-light .Education-Content .Content:nth-child(6), .Education-dark .Education-Content .Content:nth-child(6) {
+  grid-area: five;
+  font-size: 1.2rem;
+  text-align: center;
+  transform: translateX(-200px);
+  opacity: 0;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Education-light .Education-Content .Content:nth-child(7), .Education-dark .Education-Content .Content:nth-child(7) {
+  grid-area: six;
+  font-size: 1.2rem;
+  text-align: center;
+  transform: translateX(200px);
+  opacity: 0;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Education-light .Education-Content .Content:nth-child(1).Appear, .Education-dark .Education-Content .Content:nth-child(1).Appear {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Education-light .Education-Content .Content:nth-child(2).Appear, .Education-dark .Education-Content .Content:nth-child(2).Appear {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Education-light .Education-Content .Content:nth-child(3).Appear, .Education-dark .Education-Content .Content:nth-child(3).Appear {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Education-light .Education-Content .Content:nth-child(4).Appear, .Education-dark .Education-Content .Content:nth-child(4).Appear {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Education-light .Education-Content .Content:nth-child(5).Appear, .Education-dark .Education-Content .Content:nth-child(5).Appear {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Education-light .Education-Content .Content:nth-child(6).Appear, .Education-dark .Education-Content .Content:nth-child(6).Appear {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Education-light .Education-Content .Content:nth-child(7).Appear, .Education-dark .Education-Content .Content:nth-child(7).Appear {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+
+.Education-dark {
+  background-image: url(./assets/Education-Background-Dark.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: background-image 1s;
+}
+.Education-dark .Content {
+  color: white !important;
+  transition: color 1s;
+}
+.Education-dark .Content:nth-child(1) {
+  background-image: url(./assets/Logo-Education-Dark.png);
+}
+
+.Education-light {
+  background-image: url(./assets/Education-Background-White.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: background-image 1s;
+}
+.Education-light .Content {
+  color: black !important;
+  transition: color 1s;
+}
+.Education-light .Content:nth-child(1) {
+  background-image: url(./assets/Logo-Education-White.png);
+}
+
+.Knowledge-light, .Knowledge-dark {
+  max-width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+}
+.Knowledge-light .Knowledge-Content, .Knowledge-dark .Knowledge-Content {
+  margin-top: 43%;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main, .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main {
+  height: 32rem;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 50px;
+  grid-template-areas: "one" "two" "three" "four";
+  gap: 2rem;
+}
+
+.Knowledge-dark {
+  background-image: url(./assets/Knowledge-Background-Dark-Small.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: background-image 1s;
+}
+.Knowledge-dark .Knowledge-Card-Main {
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: background-color 1s, color 1s;
+}
+
+.Knowledge-light {
+  background-image: url(./assets/Knowledge-Background-White-Small.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: background-image 1s;
+}
+.Knowledge-light .Knowledge-Card-Main {
+  background-color: white;
+  color: black;
+  transition: background-color 1s, color 1s;
+}
+
+/*# sourceMappingURL=App.css.map */
