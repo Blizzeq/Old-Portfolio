@@ -118,8 +118,8 @@
       font-size: 2.5rem;
       text-align: center;
       animation: fade-in-down 1.5s ease-in-out;
-      margin-left: 2rem;
-      margin-right: 2rem;
+      margin-left: 1.75rem;
+      margin-right: 1.75rem;
       font-weight: bold;
     }
 
@@ -494,14 +494,91 @@
     .Knowledge-Card-Main {
       height: 32rem;
       display: grid;
-      grid-auto-columns: 1fr;
-      grid-auto-rows: 50px;
       grid-template-areas:
-      "one"
-        "two"
-        "three"
-        "four";
-      gap: 2rem;
+      "react react typescript typescript typescript typescript"
+      "gatsby gatsby gatsby leaflet leaflet leaflet"
+      "sass sass sass css css css"
+      "express express express mysql mysql mysql"
+      "material-ui material-ui material-ui node node node"
+      "responsive responsive responsive responsive bootstrap bootstrap"
+      "styled-components styled-components styled-components styled-components github github";
+      opacity: 0;
+      padding-block: 2rem;
+      padding-inline: 1rem;
+      gap: 1rem;
+      grid-auto-columns: 1fr;
+      .Knowledge-Card-Content {
+        opacity: 0;
+        p {
+          margin: auto;
+        }
+      }
+
+      .Knowledge-Card-Content.Appear{
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+        opacity: 1;
+      }
+
+      .Knowledge-Card-Content:nth-child(1) {
+        grid-area: react;
+      }
+
+      .Knowledge-Card-Content:nth-child(2) {
+        grid-area: typescript;
+      }
+
+      .Knowledge-Card-Content:nth-child(3) {
+        grid-area: gatsby;
+      }
+
+      .Knowledge-Card-Content:nth-child(4) {
+        grid-area: leaflet;
+      }
+
+      .Knowledge-Card-Content:nth-child(5) {
+        grid-area: sass;
+      }
+
+      .Knowledge-Card-Content:nth-child(6) {
+        grid-area: css;
+      }
+
+      .Knowledge-Card-Content:nth-child(7) {
+        grid-area: express;
+      }
+
+      .Knowledge-Card-Content:nth-child(8) {
+        grid-area: mysql;
+      }
+
+      .Knowledge-Card-Content:nth-child(9) {
+        grid-area: material-ui;
+      }
+
+      .Knowledge-Card-Content:nth-child(10) {
+        grid-area: node;
+      }
+
+      .Knowledge-Card-Content:nth-child(11) {
+        grid-area: responsive;
+      }
+
+      .Knowledge-Card-Content:nth-child(12) {
+        grid-area: bootstrap;
+      }
+
+      .Knowledge-Card-Content:nth-child(13) {
+        grid-area: styled-components;
+      }
+
+        .Knowledge-Card-Content:nth-child(14) {
+            grid-area: github;
+        }
+    }
+
+    .Knowledge-Card-Main.Appear {
+      transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s, background-color 1s;
+      opacity: 1;
     }
   }
 }
@@ -516,6 +593,12 @@
   .Knowledge-Card-Main {
     background-color: rgba(0, 0, 0, 0.8);
     transition: background-color 1s, color 1s;
+
+    .Knowledge-Card-Content {
+      background-color: lighten(rgba(0, 0, 0, 0.8), 40%);
+      color: white;
+      transition: color 1s, background-color 1s;
+    }
   }
 }
 
@@ -530,6 +613,12 @@
     background-color: white;
     color: black;
     transition: background-color 1s, color 1s;
+
+    .Knowledge-Card-Content {
+      background-color: darken(white, 10%);
+      color: black;
+      transition: color 1s, background-color 1s;
+    }
   }
 }
 
