@@ -78,6 +78,8 @@
   height: 100vh;
   background-position: top right 10%;
   transition: background-image 1s;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 .Home-light .Home-Content, .Home-dark .Home-Content {
   display: grid;
@@ -95,8 +97,8 @@
   font-size: 2.5rem;
   text-align: center;
   animation: fade-in-down 1.5s ease-in-out;
-  margin-left: 2rem;
-  margin-right: 2rem;
+  margin-left: 1.75rem;
+  margin-right: 1.75rem;
   font-weight: bold;
 }
 .Home-light .Home-Content .Content:nth-child(2), .Home-dark .Home-Content .Content:nth-child(2) {
@@ -250,6 +252,7 @@
 .Education-light, .Education-dark {
   max-width: 100vw;
   height: 100vh;
+  overflow-y: hidden;
   overflow-x: hidden;
 }
 .Education-light .Education-Content, .Education-dark .Education-Content {
@@ -394,6 +397,7 @@
   max-width: 100vw;
   height: 100vh;
   overflow-y: hidden;
+  overflow-x: hidden;
 }
 .Knowledge-light .Knowledge-Content, .Knowledge-dark .Knowledge-Content {
   margin-top: 43%;
@@ -401,12 +405,180 @@
   margin-right: 2rem;
 }
 .Knowledge-light .Knowledge-Content .Knowledge-Card-Main, .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main {
-  height: 32rem;
+  height: 34rem;
   display: grid;
+  grid-template-areas: "react react typescript typescript typescript typescript" "gatsby gatsby gatsby leaflet leaflet leaflet" "sass sass sass css css css" "styled-components styled-components styled-components styled-components github github" "express express express mysql mysql mysql" "material-ui material-ui material-ui node node node" "responsive responsive responsive responsive bootstrap bootstrap";
+  opacity: 0;
+  padding-block: 2rem;
+  padding-inline: 1rem;
+  gap: 1rem;
   grid-auto-columns: 1fr;
-  grid-auto-rows: 50px;
-  grid-template-areas: "one" "two" "three" "four";
-  gap: 2rem;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content, .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content {
+  opacity: 0;
+  border-color: #949494;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content a, .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content a {
+  margin: auto;
+  text-decoration: none;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(1), .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(1) {
+  grid-area: react;
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(2), .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(2) {
+  grid-area: typescript;
+  transform: translateX(100px);
+  opacity: 0;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(3), .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(3) {
+  grid-area: gatsby;
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(4), .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(4) {
+  grid-area: leaflet;
+  transform: translateX(100px);
+  opacity: 0;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(5), .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(5) {
+  grid-area: sass;
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(6), .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(6) {
+  grid-area: css;
+  transform: translateX(100px);
+  opacity: 0;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(7), .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(7) {
+  grid-area: express;
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(8), .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(8) {
+  grid-area: mysql;
+  transform: translateX(100px);
+  opacity: 0;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(9), .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(9) {
+  grid-area: material-ui;
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(10), .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(10) {
+  grid-area: node;
+  transform: translateX(100px);
+  opacity: 0;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(11), .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(11) {
+  grid-area: responsive;
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(12), .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(12) {
+  grid-area: bootstrap;
+  transform: translateX(100px);
+  opacity: 0;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(13), .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(13) {
+  grid-area: styled-components;
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(14), .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(14) {
+  grid-area: github;
+  transform: translateX(100px);
+  opacity: 0;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(1).Appear, .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(1).Appear {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(2).Appear, .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(2).Appear {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(3).Appear, .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(3).Appear {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(4).Appear, .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(4).Appear {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(5).Appear, .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(5).Appear {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(6).Appear, .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(6).Appear {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(7).Appear, .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(7).Appear {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(8).Appear, .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(8).Appear {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(9).Appear, .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(9).Appear {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(10).Appear, .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(10).Appear {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(11).Appear, .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(11).Appear {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(12).Appear, .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(12).Appear {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(13).Appear, .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(13).Appear {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(14).Appear, .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main .Knowledge-Card-Content:nth-child(14).Appear {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+}
+.Knowledge-light .Knowledge-Content .Knowledge-Card-Main.Appear, .Knowledge-dark .Knowledge-Content .Knowledge-Card-Main.Appear {
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s, background-color 1s;
+  opacity: 1;
 }
 
 .Knowledge-dark {
@@ -419,6 +591,14 @@
   background-color: rgba(0, 0, 0, 0.8);
   transition: background-color 1s, color 1s;
 }
+.Knowledge-dark .Knowledge-Card-Main .Knowledge-Card-Content {
+  background-color: rgba(102, 102, 102, 0.8);
+  transition: color 1s, background-color 1s;
+}
+.Knowledge-dark .Knowledge-Card-Main .Knowledge-Card-Content a {
+  color: white;
+  transition: color 1s;
+}
 
 .Knowledge-light {
   background-image: url(./assets/Knowledge-Background-White-Small.png);
@@ -430,6 +610,14 @@
   background-color: white;
   color: black;
   transition: background-color 1s, color 1s;
+}
+.Knowledge-light .Knowledge-Card-Main .Knowledge-Card-Content {
+  background-color: #e6e6e6;
+  transition: color 1s, background-color 1s;
+}
+.Knowledge-light .Knowledge-Card-Main .Knowledge-Card-Content a {
+  color: black;
+  transition: color 1s;
 }
 
 /*# sourceMappingURL=App.css.map */

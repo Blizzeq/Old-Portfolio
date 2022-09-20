@@ -114,49 +114,50 @@ function Knowledge(props) {
 
     return (
         <div className={`Knowledge-${themeMode}`}>
+            <div className={'Knowledge-Title'}><p>Knowledge</p></div>
             <div className={'Knowledge-Content'}>
                 <Card className={`Knowledge-Card-Main ${isInViewInfo}`} ref={isInViewRef}>
                     <Card className={`Knowledge-Card-Content ${isInViewInfo2}`} ref={isInViewRef2}>
-                        <p>React</p>
+                        <a href={'https://reactjs.org/'}>React</a>
                     </Card>
                     <Card className={`Knowledge-Card-Content ${isInViewInfo2}`} ref={isInViewRef2}>
-                        <p>Typescript</p>
+                        <a href={'https://www.typescriptlang.org/'}>Typescript</a>
                     </Card>
                     <Card className={`Knowledge-Card-Content ${isInViewInfo3}`} ref={isInViewRef3}>
-                        <p>Gatsby</p>
+                        <a href={'https://www.gatsbyjs.com/'}>Gatsby</a>
                     </Card>
                     <Card className={`Knowledge-Card-Content ${isInViewInfo3}`} ref={isInViewRef3}>
-                        <p>Leaflet</p>
+                        <a href={'https://leafletjs.com/'}>Leaflet</a>
                     </Card>
                     <Card className={`Knowledge-Card-Content ${isInViewInfo4}`} ref={isInViewRef4}>
-                        <p>SASS</p>
+                        <a href={'https://sass-lang.com/'}>SASS</a>
                     </Card>
                     <Card className={`Knowledge-Card-Content ${isInViewInfo4}`} ref={isInViewRef4}>
-                        <p>CSS</p>
+                        <a href={'https://en.wikipedia.org/wiki/CSS'}>CSS</a>
                     </Card>
                     <Card className={`Knowledge-Card-Content ${isInViewInfo5}`} ref={isInViewRef5}>
-                        <p>Express.js</p>
+                        <a href={'https://expressjs.com/'}>Express.js</a>
                     </Card>
                     <Card className={`Knowledge-Card-Content ${isInViewInfo5}`} ref={isInViewRef5}>
-                        <p>MySQL</p>
+                        <a href={'https://www.mysql.com/'}>MySQL</a>
                     </Card>
                     <Card className={`Knowledge-Card-Content ${isInViewInfo6}`} ref={isInViewRef6}>
-                        <p>Material-UI</p>
+                        <a href={'https://mui.com/'}>Material-UI</a>
                     </Card>
                     <Card className={`Knowledge-Card-Content ${isInViewInfo6}`} ref={isInViewRef6}>
-                        <p>Node.js</p>
+                        <a href={'https://nodejs.org/en/'}>Node.js</a>
                     </Card>
                     <Card className={`Knowledge-Card-Content ${isInViewInfo7}`} ref={isInViewRef7}>
-                        <p>Responsive Web</p>
+                        <a href={'https://en.wikipedia.org/wiki/Responsive_web_design'}>Responsive Web</a>
                     </Card>
                     <Card className={`Knowledge-Card-Content ${isInViewInfo7}`} ref={isInViewRef7}>
-                        <p>Bootstrap</p>
+                        <a href={'https://getbootstrap.com/'}>Bootstrap</a>
                     </Card>
                     <Card className={`Knowledge-Card-Content ${isInViewInfo8}`} ref={isInViewRef8}>
-                        <p>Styled Components</p>
+                        <a href={'https://styled-components.com/'}>Styled Components</a>
                     </Card>
                     <Card className={`Knowledge-Card-Content ${isInViewInfo8}`} ref={isInViewRef8}>
-                        <p>Github</p>
+                        <a href={'https://github.com/'}>Github</a>
                     </Card>
                 </Card>
             </div>
