@@ -114,6 +114,7 @@ function Knowledge(props) {
 
     return (
         <div className={`Knowledge-${themeMode}`}>
+            <div className={'Knowledge-Title'}><p>Knowledge</p></div>
             <div className={'Knowledge-Content'}>
                 <Card className={`Knowledge-Card-Main ${isInViewInfo}`} ref={isInViewRef}>
                     <Card className={`Knowledge-Card-Content ${isInViewInfo2}`} ref={isInViewRef2}>

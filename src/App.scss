@@ -490,8 +490,18 @@
   overflow-y: hidden;
   overflow-x: hidden;
 
+  .Knowledge-Title {
+    p {
+      font-size: 3.5rem;
+      text-align: center;
+      margin-top: 0.5rem;
+      color: white;
+      transition: color 1s;
+    }
+  }
+
   .Knowledge-Content {
-    margin-top: 43%;
+    margin-top: 13%;
     margin-left: 2rem;
     margin-right: 2rem;
 
@@ -512,9 +522,11 @@
       padding-inline: 1rem;
       gap: 1rem;
       grid-auto-columns: 1fr;
+
       .Knowledge-Card-Content {
         opacity: 0;
         border-color: #949494;
+
         a {
           margin: auto;
           text-decoration: none;
@@ -612,18 +624,18 @@
         transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
       }
 
-        .Knowledge-Card-Content:nth-child(14) {
-          grid-area: github;
-          transform: translateX(100px);
-          opacity: 0;
-          transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
-        }
+      .Knowledge-Card-Content:nth-child(14) {
+        grid-area: github;
+        transform: translateX(100px);
+        opacity: 0;
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+      }
 
-        .Knowledge-Card-Content:nth-child(1).Appear {
-          transform: translateX(0);
-          opacity: 1;
-          transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
-        }
+      .Knowledge-Card-Content:nth-child(1).Appear {
+        transform: translateX(0);
+        opacity: 1;
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
+      }
 
       .Knowledge-Card-Content:nth-child(2).Appear {
         transform: translateX(0);
@@ -725,6 +737,7 @@
     .Knowledge-Card-Content {
       background-color: lighten(rgba(0, 0, 0, 0.8), 40%);
       transition: color 1s, background-color 1s;
+
       a {
         color: white;
         transition: color 1s;
