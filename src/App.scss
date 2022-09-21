@@ -856,33 +856,110 @@
   .Knowledge-Content {
     margin-top: 9% !important;
 
+    .Knowledge-Card-Main {
+      height: 55rem !important;
+    }
+
     .Knowledge-Card-Content {
 
       a {
-        font-size: 1.25rem !important;
+        font-size: 1.75rem !important;
       }
     }
   }
 
-    .Knowledge-Title {
-      p {
-        font-size: 6.5rem !important;
-        margin-top: 1rem !important;
-        margin-bottom: 0 !important;
-      }
+  .Knowledge-Title {
+    p {
+      font-size: 6.5rem !important;
+      margin-top: 1rem !important;
+      margin-bottom: 0 !important;
     }
+  }
 
   .Education-Content {
     margin-right: 4rem !important;
-    padding-block: 6rem !important;
+    padding-block: 15rem !important;
+
     .Content {
       font-size: 1.5rem !important;
     }
+
     .Content:nth-child(1) {
       scale: 1.25 !important;
     }
   }
 
+  .Home-Content {
+    grid-auto-columns: 1fr;
+    gap: 2rem !important;
+    padding-block: 8rem !important;
+
+    .Content:nth-child(1) {
+      font-size: 3.5rem !important;
+      text-align: center;
+      animation: fade-in-down 1.5s ease-in-out;
+      margin-left: 2rem !important;
+      margin-right: 2rem !important;
+      font-weight: bold;
+    }
+
+    .Content:nth-child(2) {
+      font-size: 2.5rem !important;
+    }
+
+    .Content:nth-child(3) {
+      scale: 1.5 !important;
+      margin-top: 5rem !important;
+    }
+
+    .Content:nth-child(4) {
+      font-size: 2.5rem !important;
+      margin-top: 6rem !important;
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+  }
+
+  %Navbar {
+    a {
+      font-size: 2.8rem;
+    }
+
+    .navbar-brand {
+      margin-left: 1rem;
+    }
+
+    a.nav-link, span {
+      font-size: 2.3rem;
+    }
+
+    .navbar-nav {
+      text-align: center !important;
+
+      label {
+        margin: auto;
+      }
+    }
+
+    .nav-item {
+      .dropdown-menu {
+        .dropdown-item {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    #DisplayModeSwitch{
+      scale: 1.1;
+    }
+  }
+  .Navbar-dark {
+    @extend %Navbar;
+  }
+
+    .Navbar-light {
+        @extend %Navbar;
+    }
 }
 
 
