@@ -833,3 +833,31 @@
   @extend %Footer;
 }
 
+@media only screen and (min-width: 768px){
+  .Footer-Content{
+    height: 6.25rem !important;
+    grid-template-areas:
+  "name name github linkedin contact" !important;
+    gap: 1rem !important;
+    grid-auto-columns: 1fr !important;
+    grid-auto-rows: 1fr !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+
+  .Content:nth-child(1) {
+    p {
+      font-size: 1.5rem;
+      color: white;
+      padding-top: 1rem;
+      text-align: center;
+    }
+  }
+
+  .Content:nth-child(4) {
+    padding-top: 1rem !important;
+  }
+}
+
+
+
