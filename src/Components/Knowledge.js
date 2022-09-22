@@ -127,7 +127,7 @@ function Knowledge(props) {
                         <a href={'https://www.gatsbyjs.com/'}>Gatsby</a>
                     </Card>
                     <Card className={`Knowledge-Card-Content ${isInViewInfo3}`} ref={isInViewRef3}>
-                        <a href={'https://leafletjs.com/'}>Leaflet</a>
+                        <a href={'https://axios-http.com/docs/intro'}>Axios</a>
                     </Card>
                     <Card className={`Knowledge-Card-Content ${isInViewInfo4}`} ref={isInViewRef4}>
                         <a href={'https://sass-lang.com/'}>SASS</a>
@@ -148,7 +148,7 @@ function Knowledge(props) {
                         <a href={'https://nodejs.org/en/'}>Node.js</a>
                     </Card>
                     <Card className={`Knowledge-Card-Content ${isInViewInfo7}`} ref={isInViewRef7}>
-                        <a href={'https://en.wikipedia.org/wiki/Responsive_web_design'}>Responsive Web</a>
+                        <a href={'https://en.wikipedia.org/wiki/Responsive_web_design'}>Responsive Web Design</a>
                     </Card>
                     <Card className={`Knowledge-Card-Content ${isInViewInfo7}`} ref={isInViewRef7}>
                         <a href={'https://getbootstrap.com/'}>Bootstrap</a>

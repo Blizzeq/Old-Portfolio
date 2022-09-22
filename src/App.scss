@@ -203,6 +203,10 @@
     margin-left: 1rem;
   }
 
+  .navbar-brand:hover {
+    color: #686868;
+  }
+
   a.nav-link, span {
     font-size: 1.3rem;
   }
@@ -447,7 +451,7 @@
 
 .Education-dark {
   @extend %Education;
-  background-image: url(./assets/Education-Background-Dark.png);
+  background-image: url(./assets/Education-Background-Dark-Small.png);
   background-size: cover;
   background-repeat: no-repeat;
   transition: background-image 1s;
@@ -464,7 +468,7 @@
 
 .Education-light {
   @extend %Education;
-  background-image: url(./assets/Education-Background-White.png);
+  background-image: url(./assets/Education-Background-White-Small.png);
   background-size: cover;
   background-repeat: no-repeat;
   transition: background-image 1s;
@@ -505,7 +509,7 @@
       display: grid;
       grid-template-areas:
       "react react typescript typescript typescript typescript"
-      "gatsby gatsby gatsby leaflet leaflet leaflet"
+      "gatsby gatsby gatsby axios axios axios"
       "sass sass sass css css css"
       "styled-components styled-components styled-components styled-components github github"
       "express express express mysql mysql mysql"
@@ -550,7 +554,7 @@
       }
 
       .Knowledge-Card-Content:nth-child(4) {
-        grid-area: leaflet;
+        grid-area: axios;
         transform: translateX(100px);
         opacity: 0;
         transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s;
@@ -857,7 +861,7 @@
     margin-top: 9% !important;
 
     .Knowledge-Card-Main {
-      height: 55rem !important;
+      min-height: 40rem !important;
     }
 
     .Knowledge-Card-Content {
@@ -949,7 +953,7 @@
       }
     }
 
-    #DisplayModeSwitch{
+    #DisplayModeSwitch {
       scale: 1.1;
     }
   }
@@ -957,10 +961,166 @@
     @extend %Navbar;
   }
 
-    .Navbar-light {
-        @extend %Navbar;
-    }
+  .Navbar-light {
+    @extend %Navbar;
+  }
 }
 
+@media only screen and (min-width: 1024px) {
+  %Navbar-desktop {
+    .Container {
+      max-width: 100vw;
+      margin-left: 3rem;
+      margin-right: 3rem;
 
+      a {
+        font-size: 2rem !important;
+      }
+
+      .navbar-brand {
+        margin-left: 0 !important;
+      }
+
+      a.nav-link, span {
+        font-size: 2rem !important;
+      }
+
+      .navbar-nav {
+        text-align: center !important;
+      }
+
+      .nav-item {
+        .dropdown-menu {
+          .dropdown-item {
+            font-size: 1.5rem !important;
+          }
+        }
+      }
+
+      #DisplayModeSwitch {
+        scale: 1 !important;
+      }
+    }
+  }
+
+  .Navbar-dark {
+    @extend %Navbar-desktop;
+  }
+
+  .Navbar-light {
+    @extend %Navbar-desktop;
+  }
+
+  .Home-Content {
+    grid-template-areas:
+    "one one three three"
+    "two two three three"
+    "four four four four" !important;
+    gap: 2rem !important;
+    padding-block: 8rem !important;
+
+    .Content:nth-child(1) {
+      grid-area: one !important;
+      font-size: 4.5rem !important;
+      text-align: center;
+      animation: fade-in-down 1.5s ease-in-out;
+      margin-left: 2rem !important;
+      margin-right: 2rem !important;
+      font-weight: bold;
+      margin-top: 5rem !important;
+    }
+
+    .Content:nth-child(2) {
+      grid-area: two !important;
+      font-size: 3rem !important;
+      margin-top: 5rem !important;
+    }
+
+    .Content:nth-child(3) {
+      grid-area: three !important;
+      scale: 2 !important;
+      margin-top: 12rem !important;
+    }
+
+    .Content:nth-child(4) {
+      grid-area: four !important;
+      display: none !important;
+    }
+  }
+
+  .Home-dark{
+    background-image: url(./assets/Home-Background-Dark.png) !important;
+  }
+
+    .Home-light{
+        background-image: url(./assets/Home-Background-White.png) !important;
+
+      .Content:nth-child(2) {
+        color: black !important;
+      }
+    }
+
+  .Education-Content {
+    margin-right: 4rem !important;
+    padding-block: 5rem !important;
+    gap: 4rem !important;
+
+    .Content {
+      font-size: 2rem !important;
+
+    }
+
+    .Content:nth-child(1) {
+      scale: 1.75 !important;
+      margin-bottom: 2rem !important;
+    }
+
+    .Content:nth-child(3) {
+      margin-top: 4.5rem !important;
+    }
+  }
+
+  .Education-dark {
+    background-image: url(./assets/Education-Background-Dark.png) !important;
+  }
+
+    .Education-light {
+        background-image: url(./assets/Education-Background-White.png) !important;
+      .Content{
+        color: white !important;
+      }
+    }
+
+  .Knowledge-Content {
+    margin-top: 3rem !important;
+    justify-content: center !important;
+
+    .Knowledge-Card-Main {
+      min-height: 40rem !important;
+      max-width: 75rem !important;
+      margin: auto !important;
+    }
+
+    .Knowledge-Card-Content {
+
+      a {
+        font-size: 1.75rem !important;
+      }
+    }
+  }
+
+  .Knowledge-Title {
+    p {
+      font-size: 6.5rem !important;
+      font-weight: bold;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
+  }
+
+  .Knowledge-dark{
+    background-image: url(./assets/Knowledge-Background-Dark.png) !important;
+  }
+
+}
 
