@@ -101,8 +101,8 @@ function App() {
                     </Container>
                 </Navbar>
                 <Routes>
-                    <Route path="/" element={<Home/>}/>
-                    <Route path="/notfound" element={<NotFound/>}/>
+                    <Route path="/Portfolio" element={<Home/>}/>
+                    <Route path="/Portfolio/notfound" element={<NotFound/>}/>
                 </Routes>
             </BrowserRouter>
         </ThemeContext.Provider>
