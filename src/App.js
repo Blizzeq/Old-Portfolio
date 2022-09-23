@@ -85,7 +85,7 @@ function App() {
                                     </NavDropdown.Item>
                                     <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
                                     <NavDropdown.Divider/>
-                                    <NavDropdown.Item href="/Portfolio/notfound">
+                                    <NavDropdown.Item href="/Portfolio/notfound/">
                                         Separated link
                                     </NavDropdown.Item>
                                 </NavDropdown>
@@ -102,7 +102,7 @@ function App() {
                 </Navbar>
                 <Routes>
                     <Route path="/Portfolio/" element={<Home/>}/>
-                    <Route path="/Portfolio/notfound" element={<NotFound/>}/>
+                    <Route path="/Portfolio/notfound/" element={<NotFound/>}/>
                 </Routes>
             </BrowserRouter>
         </ThemeContext.Provider>
