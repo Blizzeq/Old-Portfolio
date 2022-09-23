@@ -72,7 +72,7 @@ function App() {
             <BrowserRouter>
                 <Navbar collapseOnSelect expand="lg" className={`Navbar-${themeMode}`} sticky={"top"}>
                     <Container className={'Container'}>
-                        <Navbar.Brand href="/Portfolio">Jakub Krasuski</Navbar.Brand>
+                        <Navbar.Brand href="/Portfolio/">Jakub Krasuski</Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
@@ -85,7 +85,7 @@ function App() {
                                     </NavDropdown.Item>
                                     <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
                                     <NavDropdown.Divider/>
-                                    <NavDropdown.Item href="/notfound">
+                                    <NavDropdown.Item href="/Portfolio/notfound">
                                         Separated link
                                     </NavDropdown.Item>
                                 </NavDropdown>
@@ -101,8 +101,8 @@ function App() {
                     </Container>
                 </Navbar>
                 <Routes>
-                    <Route path="/Portfolio" element={<Home/>}/>
-                    <Route path="/notfound" element={<NotFound/>}/>
+                    <Route path="/Portfolio/" element={<Home/>}/>
+                    <Route path="/Portfolio/notfound" element={<NotFound/>}/>
                 </Routes>
             </BrowserRouter>
         </ThemeContext.Provider>
