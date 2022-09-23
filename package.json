@@ -1,4 +1,5 @@
 {
+  "homepage": "http://Blizzeq.github.io/Portfolio",
   "name": "cv",
   "version": "0.1.0",
   "private": true,
@@ -24,11 +25,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build",
-    "predeploy": "npm run build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -50,6 +51,5 @@
   },
   "devDependencies": {
     "gh-pages": "^4.0.0"
-  },
-  "homepage": "https://Blizzeq.github.io/Portfolio/cv"
+  }
 }
