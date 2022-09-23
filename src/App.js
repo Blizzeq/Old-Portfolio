@@ -72,7 +72,7 @@ function App() {
             <BrowserRouter>
                 <Navbar collapseOnSelect expand="lg" className={`Navbar-${themeMode}`} sticky={"top"}>
                     <Container className={'Container'}>
-                        <Navbar.Brand href="/">Jakub Krasuski</Navbar.Brand>
+                        <Navbar.Brand href="/Portfolio">Jakub Krasuski</Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
