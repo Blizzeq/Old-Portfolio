@@ -102,7 +102,7 @@ function App() {
                 </Navbar>
                 <Routes>
                     <Route path="/Portfolio" element={<Home/>}/>
-                    <Route path="/Portfolio/notfound" element={<NotFound/>}/>
+                    <Route path="/notfound" element={<NotFound/>}/>
                 </Routes>
             </BrowserRouter>
         </ThemeContext.Provider>
