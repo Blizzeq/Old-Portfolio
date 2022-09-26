@@ -24,11 +24,13 @@ function Footer(props) {
                         <img src={Linkedin} alt={'Linkedin'}/>
                     </a>
                 </div>
-                <LinkContainer to={"/contact"}>
+
                 <div className={'Content'}>
-                    Contact
-                </div>
+                    <LinkContainer to={"/contact"}>
+                    <a>Contact</a>
                 </LinkContainer>
+                </div>
+
             </div>
         </div>
     );

@@ -82,23 +82,11 @@ function App() {
                         <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
-                                <Nav.Link href="#Education">Features</Nav.Link>
-                                <Nav.Link href="#pricing">Pricing</Nav.Link>
-                                <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                                    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.2">
-                                        Another action
-                                    </NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                                    <NavDropdown.Divider/>
-                                    <LinkContainer to="/notfound">
-                                    <NavDropdown.Item>
-                                        Separated link
-                                    </NavDropdown.Item>
-                                    </LinkContainer>
-                                </NavDropdown>
                             </Nav>
                             <Nav>
+                                <LinkContainer to="/contact">
+                                <Nav.Link>Contact</Nav.Link>
+                                </LinkContainer>
                                 <FormControlLabel id={'DisplayModeSwitch'}
                                                   control={<MaterialUISwitch sx={{m: 1}} defaultChecked />}
                                                   label={themeMode === 'dark' ? 'Dark Mode' : 'Light Mode'}
@@ -110,7 +98,7 @@ function App() {
                 </Navbar>
                 <Routes>
                     <Route path="/" element={<Home/>}/>
-                    <Route path="/notfound" element={<NotFound/>}/>
+                    <Route path="*" element={<NotFound/>}/>
                     <Route path="/contact" element={<Contact/>}/>
                 </Routes>
                 <Footer/>
