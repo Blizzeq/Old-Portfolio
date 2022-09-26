@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import {ThemeContext} from "../App";
 import Github from "../assets/Github-icon.png";
 import Linkedin from "../assets/Linkedin-icon.png";
+import {LinkContainer} from "react-router-bootstrap";
 
 function Footer(props) {
 
@@ -23,9 +24,11 @@ function Footer(props) {
                         <img src={Linkedin} alt={'Linkedin'}/>
                     </a>
                 </div>
+                <LinkContainer to={"/contact"}>
                 <div className={'Content'}>
                     Contact
                 </div>
+                </LinkContainer>
             </div>
         </div>
     );
