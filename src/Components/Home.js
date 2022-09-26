@@ -54,7 +54,6 @@ function Home(props) {
             </div>
             <Education/>
             <Knowledge/>
-            <Footer/>
         </>
     );
 }
