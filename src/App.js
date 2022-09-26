@@ -1,5 +1,5 @@
 import './App.scss';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {HashRouter, Route, Routes} from "react-router-dom";
 import NotFound from "./Components/NotFound";
 import Home from "./Components/Home";
 import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
@@ -8,6 +8,7 @@ import {FormControlLabel, styled, Switch} from "@mui/material";
 
 
 const MaterialUISwitch = styled(Switch)(({theme}) => ({
+
     width: 62,
     height: 34,
     padding: 7,
@@ -69,10 +70,10 @@ function App() {
 
     return (
         <ThemeContext.Provider value={{themeMode, setThemeMode}}>
-            <BrowserRouter>
+            <HashRouter>
                 <Navbar collapseOnSelect expand="lg" className={`Navbar-${themeMode}`} sticky={"top"}>
                     <Container className={'Container'}>
-                        <Navbar.Brand href="/Portfolio/">Jakub Krasuski</Navbar.Brand>
+                        <Navbar.Brand href="/">Jakub Krasuski</Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
@@ -85,7 +86,7 @@ function App() {
                                     </NavDropdown.Item>
                                     <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
                                     <NavDropdown.Divider/>
-                                    <NavDropdown.Item href="/Portfolio/notfound">
+                                    <NavDropdown.Item href="/notfound">
                                         Separated link
                                     </NavDropdown.Item>
                                 </NavDropdown>
@@ -101,10 +102,10 @@ function App() {
                     </Container>
                 </Navbar>
                 <Routes>
-                    <Route path="/Portfolio/" element={<Home/>}/>
-                    <Route path="/Portfolio/notfound" element={<NotFound/>}/>
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="/notfound" element={<NotFound/>}/>
                 </Routes>
-            </BrowserRouter>
+            </HashRouter>
         </ThemeContext.Provider>
     );
 }
