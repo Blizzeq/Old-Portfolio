@@ -831,6 +831,31 @@
   @extend %Footer;
 }
 
+%Contact{
+  width: 100vw;
+  height: 844px;
+  padding-top: 5rem;
+
+  .Card-Contact{
+    width: 20rem;
+    min-height: 30rem;
+  }
+}
+
+.Contact-dark {
+  @extend %Contact;
+  background-image: url(./assets/Home-Background-Dark-Small.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.Contact-light {
+  @extend %Contact;
+  background-image: url(./assets/Home-Background-White-Small.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 @media only screen and (min-width: 768px) {
   .Footer-Content {
     height: 6.25rem !important;
