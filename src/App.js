@@ -4,7 +4,7 @@ import NotFound from "./Components/NotFound";
 import Home from "./Components/Home";
 import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
 import React, {createContext, useState} from "react";
-import {FormControlLabel, styled, Switch} from "@mui/material";
+import {FormControlLabel, Link, styled, Switch} from "@mui/material";
 
 
 const MaterialUISwitch = styled(Switch)(({theme}) => ({
@@ -60,10 +60,9 @@ export const ThemeContext = createContext(null);
 function App() {
 
 
-
     const [themeMode, setThemeMode] = useState('dark');
 
-    function toggleTheme(){
+    function toggleTheme() {
         setThemeMode(themeMode === 'dark' ? 'light' : 'dark');
     }
 
@@ -73,7 +72,7 @@ function App() {
             <HashRouter>
                 <Navbar collapseOnSelect expand="lg" className={`Navbar-${themeMode}`} sticky={"top"}>
                     <Container className={'Container'}>
-                        <Navbar.Brand href="/">Jakub Krasuski</Navbar.Brand>
+                        <Navbar.Brand><Link to={"/"}>Jakub Krasuski</Link></Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
@@ -86,14 +85,15 @@ function App() {
                                     </NavDropdown.Item>
                                     <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
                                     <NavDropdown.Divider/>
-                                    <NavDropdown.Item href="/notfound">
+                                    <NavDropdown.Item><Link to={"/notfound"}>
                                         Separated link
+                                    </Link>
                                     </NavDropdown.Item>
                                 </NavDropdown>
                             </Nav>
                             <Nav>
                                 <FormControlLabel id={'DisplayModeSwitch'}
-                                                  control={<MaterialUISwitch sx={{m: 1}} defaultChecked />}
+                                                  control={<MaterialUISwitch sx={{m: 1}} defaultChecked/>}
                                                   label={themeMode === 'dark' ? 'Dark Mode' : 'Light Mode'}
                                                   onChange={toggleTheme}
                                 />
