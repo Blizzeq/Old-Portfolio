@@ -6,6 +6,7 @@ import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
 import React, {createContext, useState} from "react";
 import {FormControlLabel, styled, Switch} from "@mui/material";
 import {LinkContainer} from "react-router-bootstrap";
+import Contact from "./Components/Contact";
 
 
 const MaterialUISwitch = styled(Switch)(({theme}) => ({
@@ -109,6 +110,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/notfound" element={<NotFound/>}/>
+                    <Route path="/contact" element={<Contact/>}/>
                 </Routes>
             </HashRouter>
         </ThemeContext.Provider>
