@@ -1,12 +1,9 @@
 import './App.scss';
 import {HashRouter, Route, Routes} from "react-router-dom";
-import NotFound from "./Components/NotFound";
-import Home from "./Components/Home";
-import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
+import {Container, Nav, Navbar} from "react-bootstrap";
 import React, {createContext, useState} from "react";
 import {FormControlLabel, styled, Switch} from "@mui/material";
 import {LinkContainer} from "react-router-bootstrap";
-import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 
 
@@ -59,10 +56,12 @@ const MaterialUISwitch = styled(Switch)(({theme}) => ({
 }));
 export const ThemeContext = createContext(null);
 
+const LazyContact = React.lazy(() => import('./Components/Contact'));
+const LazyHome = React.lazy(() => import('./Components/Home'));
+const LazyNotFound = React.lazy(() => import('./Components/NotFound'));
+
 
 function App() {
-
-
 
     const [themeMode, setThemeMode] = useState('dark');
 
@@ -97,9 +96,9 @@ function App() {
                     </Container>
                 </Navbar>
                 <Routes>
-                    <Route path="/" element={<Home/>}/>
-                    <Route path="*" element={<NotFound/>}/>
-                    <Route path="/contact" element={<Contact/>}/>
+                    <Route path="/" element={<React.Suspense fallback={'Loading...'}><LazyHome/></React.Suspense>}/>
+                    <Route path="*" element={<React.Suspense fallback={'Loading...'}><LazyNotFound/></React.Suspense>}/>
+                    <Route path="/contact" element={<React.Suspense fallback={'Loading...'}><LazyContact/></React.Suspense>}/>
                 </Routes>
                 <Footer/>
             </HashRouter>
