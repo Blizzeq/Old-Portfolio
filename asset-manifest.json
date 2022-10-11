@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.d9b30be4.css",
+    "main.css": "/Portfolio/static/css/main.6dc7aea9.css",
     "main.js": "/Portfolio/static/js/main.2eeafba4.js",
     "static/js/536.2531a63e.chunk.js": "/Portfolio/static/js/536.2531a63e.chunk.js",
     "static/js/497.f427b3d2.chunk.js": "/Portfolio/static/js/497.f427b3d2.chunk.js",
@@ -25,9 +25,9 @@
     "static/media/Logo-Education-Dark.png": "/Portfolio/static/media/Logo-Education-Dark.b8e9baec9d00e98adb57.png",
     "static/media/Logo-Education-White.png": "/Portfolio/static/media/Logo-Education-White.d8715916294f89f87662.png",
     "index.html": "/Portfolio/index.html",
-    "static/media/list-white.svg": "/Portfolio/static/media/list-white.f8dea661e4d18c4029c1.svg",
-    "static/media/list-black.svg": "/Portfolio/static/media/list-black.80ce2dce7ea47bfe7414.svg",
-    "main.d9b30be4.css.map": "/Portfolio/static/css/main.d9b30be4.css.map",
+    "static/media/list-white.svg": "/Portfolio/static/media/list-white.e269475c903c1f67d5ba.svg",
+    "static/media/list-black.svg": "/Portfolio/static/media/list-black.6c622c1e20a48d339590.svg",
+    "main.6dc7aea9.css.map": "/Portfolio/static/css/main.6dc7aea9.css.map",
     "main.2eeafba4.js.map": "/Portfolio/static/js/main.2eeafba4.js.map",
     "536.2531a63e.chunk.js.map": "/Portfolio/static/js/536.2531a63e.chunk.js.map",
     "497.f427b3d2.chunk.js.map": "/Portfolio/static/js/497.f427b3d2.chunk.js.map",
@@ -36,7 +36,7 @@
     "650.f89337a7.chunk.js.map": "/Portfolio/static/js/650.f89337a7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d9b30be4.css",
+    "static/css/main.6dc7aea9.css",
     "static/js/main.2eeafba4.js"
   ]
 }
