@@ -1123,7 +1123,7 @@
     "two two three three"
     "four four four four" !important;
     gap: 2rem !important;
-    padding-block: 8rem !important;
+    padding-top: 20vh !important;
 
     .Content:nth-child(1) {
       grid-area: one !important;
@@ -1156,10 +1156,12 @@
 
   .Home-dark {
     background-image: url(./assets/Home-Background-Dark.png) !important;
+    min-height: 100vh !important;
   }
 
   .Home-light {
     background-image: url(./assets/Home-Background-White.png) !important;
+    min-height: 100vh !important;
 
     .Content:nth-child(2) {
       color: black !important;
@@ -1168,7 +1170,7 @@
 
   .Education-Content {
     margin-right: 4rem !important;
-    padding-block: 5rem !important;
+    padding-block: 20vh !important;
     gap: 4rem !important;
 
     .Content {
@@ -1188,10 +1190,12 @@
 
   .Education-dark {
     background-image: url(./assets/Education-Background-Dark.png) !important;
+    min-height: 100vh !important;
   }
 
   .Education-light {
     background-image: url(./assets/Education-Background-White.png) !important;
+    min-height: 100vh !important;
 
     .Content {
       color: white !important;
@@ -1199,7 +1203,7 @@
   }
 
   .Knowledge-Content {
-    margin-top: 3rem !important;
+    margin-top: 15vh !important;
     justify-content: center !important;
 
     .Knowledge-Card-Main {
@@ -1220,23 +1224,25 @@
     p {
       font-size: 6.5rem !important;
       font-weight: bold;
-      margin-top: 0 !important;
+      margin-top: 5vh !important;
       margin-bottom: 0 !important;
     }
   }
 
   .Knowledge-dark {
     background-image: url(./assets/Knowledge-Background-Dark.png) !important;
+    min-height: 100vh !important;
   }
 
   .Knowledge-light {
     background-image: url(./assets/Knowledge-Background-White.png) !important;
+    min-height: 100vh !important;
   }
 
   %Contact2{
     overflow-x: hidden;
     min-height: 100vh;
-    padding-top: 4.5rem;
+    padding-top: 20vh !important;
     .Card-Contact{
       width: 40rem;
       min-height: 35rem;
