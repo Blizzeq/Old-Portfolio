@@ -1,11 +1,12 @@
 {
   "files": {
     "main.css": "/Portfolio/static/css/main.6dc7aea9.css",
-    "main.js": "/Portfolio/static/js/main.2eeafba4.js",
-    "static/js/536.2531a63e.chunk.js": "/Portfolio/static/js/536.2531a63e.chunk.js",
+    "main.js": "/Portfolio/static/js/main.e3a1f08b.js",
+    "static/js/442.92cc0c3a.chunk.js": "/Portfolio/static/js/442.92cc0c3a.chunk.js",
     "static/js/497.f427b3d2.chunk.js": "/Portfolio/static/js/497.f427b3d2.chunk.js",
     "static/js/636.be9ccdf5.chunk.js": "/Portfolio/static/js/636.be9ccdf5.chunk.js",
     "static/js/787.a71561b8.chunk.js": "/Portfolio/static/js/787.a71561b8.chunk.js",
+    "static/js/199.f203c47c.chunk.js": "/Portfolio/static/js/199.f203c47c.chunk.js",
     "static/js/650.f89337a7.chunk.js": "/Portfolio/static/js/650.f89337a7.chunk.js",
     "static/media/Knowledge-Background-Dark.png": "/Portfolio/static/media/Knowledge-Background-Dark.1cf8188669e1fee7b837.png",
     "static/media/Home-Background-Dark.png": "/Portfolio/static/media/Home-Background-Dark.1840989d5105c7325980.png",
@@ -28,15 +29,16 @@
     "static/media/list-white.svg": "/Portfolio/static/media/list-white.e269475c903c1f67d5ba.svg",
     "static/media/list-black.svg": "/Portfolio/static/media/list-black.6c622c1e20a48d339590.svg",
     "main.6dc7aea9.css.map": "/Portfolio/static/css/main.6dc7aea9.css.map",
-    "main.2eeafba4.js.map": "/Portfolio/static/js/main.2eeafba4.js.map",
-    "536.2531a63e.chunk.js.map": "/Portfolio/static/js/536.2531a63e.chunk.js.map",
+    "main.e3a1f08b.js.map": "/Portfolio/static/js/main.e3a1f08b.js.map",
+    "442.92cc0c3a.chunk.js.map": "/Portfolio/static/js/442.92cc0c3a.chunk.js.map",
     "497.f427b3d2.chunk.js.map": "/Portfolio/static/js/497.f427b3d2.chunk.js.map",
     "636.be9ccdf5.chunk.js.map": "/Portfolio/static/js/636.be9ccdf5.chunk.js.map",
     "787.a71561b8.chunk.js.map": "/Portfolio/static/js/787.a71561b8.chunk.js.map",
+    "199.f203c47c.chunk.js.map": "/Portfolio/static/js/199.f203c47c.chunk.js.map",
     "650.f89337a7.chunk.js.map": "/Portfolio/static/js/650.f89337a7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6dc7aea9.css",
-    "static/js/main.2eeafba4.js"
+    "static/js/main.e3a1f08b.js"
   ]
 }
