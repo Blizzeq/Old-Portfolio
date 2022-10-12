@@ -2,6 +2,7 @@ import React, {useContext, useRef, useState} from 'react';
 import {ThemeContext} from "../App";
 import emailjs from "@emailjs/browser";
 import {Alert, Button, Card, Form} from "react-bootstrap";
+import {MDBSpinner} from "mdb-react-ui-kit";
 
 
 function Contact(props) {
@@ -13,6 +14,8 @@ function Contact(props) {
     const [valueCheck, setValueCheck] = useState(0);
 
     const [validated, setValidated] = useState(false);
+
+    const [showSpinner, setShowSpinner] = useState(false);
 
 
     const handleSubmit = (e) => {
@@ -29,11 +32,14 @@ function Contact(props) {
 
     const sendEmail = (e) => {
         e.preventDefault();
+        setShowSpinner(true);
+
 
         emailjs.sendForm('service_afpsyxl', 'template_v4qx4u4', form.current, 'KMHJ2SCdbVqmNLQ9K')
             .then((result) => {
                 console.log(result.text);
                 setValueCheck(1);
+                setShowSpinner(false);
             }, (error) => {
                 console.log(error.text);
                 setValueCheck(2);
@@ -74,9 +80,12 @@ function Contact(props) {
                                 Please provide a valid message.
                             </Form.Control.Feedback>
                         </Form.Group>
-                        {valueCheck === 0 && <Button variant="primary" type="submit" className={'Button-Contact'}>
+                        {valueCheck === 0 && showSpinner === false ? <Button variant="primary" type="submit" className={'Button-Contact'}>
                             Contact me
-                        </Button>}
+                        </Button> : null}
+                        {valueCheck === 0 && showSpinner === true ? <MDBSpinner className='me-2' color={'primary'} style={{ width: '6.5vh', height: '6.5vh', borderWidth:'1vh' }}>
+                            <span className='visually-hidden'>Loading...</span>
+                        </MDBSpinner> : null}
                         {valueCheck === 1 && <Alert variant={"success"} className={'Alert'}>
                             Message sent successfully! I will contact you as soon as possible.
                         </Alert>}
