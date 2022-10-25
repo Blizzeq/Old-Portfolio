@@ -1,9 +1,35 @@
-# This is Portfolio App
 
-## Description
+# Budget-App
 
-### This is a portfolio app that I created to showcase myself.
+Portfolio application
 
-## Author: Jakub Krasuski
 
-## Visit site: https://blizzeq.github.io/Portfolio/
+## Demo
+
+https://blizzeq.github.io/Portfolio/
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/Blizzeq/Portfolio.git
+```
+
+Go to the project directory
+
+```bash
+  cd my-project
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+
