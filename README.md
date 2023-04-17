@@ -6,7 +6,7 @@ Portfolio application
 
 ## Demo
 
-https://blizzeq.github.io/Portfolio/
+old-portfolio-jk.netlify.app
 ## Run Locally
 
 Clone the project
