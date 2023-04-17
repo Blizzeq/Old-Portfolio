@@ -6,7 +6,7 @@ Portfolio application
 
 ## Demo
 
-old-portfolio-jk.netlify.app
+https://old-portfolio-jk.netlify.app/
 ## Run Locally
 
 Clone the project
